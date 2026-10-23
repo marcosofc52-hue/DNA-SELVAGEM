@@ -2,251 +2,411 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Conheça os guepardos, as panteras negras e a genética dos grandes felinos.">
 <title>DNA Selvagem | Guepardos e Panteras</title>
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#081510;color:#fff8e9;font-family:Arial,sans-serif;line-height:1.6}
-header{padding:18px 5%;background:#10251d;position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-weight:900;letter-spacing:2px;color:#d5ff65}
-nav a{color:white;text-decoration:none;margin:0 8px;font-size:14px}
-nav a:hover{color:#d5ff65}
-.hero{padding:100px 7%;min-height:490px;background:linear-gradient(90deg,#081510 5%,#081510bd 65%,#08151044),url('https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?auto=format&fit=crop&w=1600&q=85') center/cover}
-.hero h1{font-size:clamp(42px,8vw,85px);line-height:1;margin:15px 0}
-.lima{color:#d5ff65}
-.hero p{max-width:600px;font-size:18px}
-.btn{display:inline-block;background:#d5ff65;color:#10251d;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:12px}
-section{padding:65px 7%}
-section:nth-of-type(even){background:#0d1d16}
-h2{font-size:clamp(28px,5vw,45px);line-height:1.1}
-.intro{color:#c4d1c7;max-width:700px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.card{background:#10251d;border:1px solid #ffffff20;border-radius:20px;overflow:hidden}
-.card img{width:100%;height:240px;object-fit:cover}
-.card div{padding:22px}
-.card p,.fact p{color:#c4d1c7}
-.tag{color:#d5ff65;font-size:12px;font-weight:bold;letter-spacing:1px}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
-.fact{background:#10251d;padding:22px;border-radius:16px}
-.fact b{font-size:25px}
-table{border-collapse:collapse;width:100%;min-width:550px;background:#10251d}
-th,td{text-align:left;padding:14px;border-bottom:1px solid #ffffff20}
-th{color:#d5ff65}
-.table-wrap{overflow-x:auto}
-.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
-.person{background:linear-gradient(135deg,#1c4932,#10251d);border:1px solid #ffffff20;padding:20px 10px;border-radius:14px;text-align:center;font-weight:bold}
-.person span{display:block;color:#d5ff65;font-size:11px;letter-spacing:2px}
-.quiz{max-width:700px;background:#10251d;padding:24px;border-radius:18px}
-.answers{display:grid;gap:10px}
-.answers button{padding:13px;background:#1c4932;color:white;border:1px solid #ffffff30;border-radius:10px;text-align:left;font-size:16px;cursor:pointer}
-.answers button:hover{border-color:#d5ff65}
-.answers button:disabled{cursor:default;opacity:.85}
-#feedback{color:#d5ff65;font-weight:bold}
-footer{text-align:center;padding:30px;color:#c4d1c7;background:#10251d}
-.dna-box{background:#10251d;border:1px solid #d5ff6540;padding:24px;border-radius:18px;margin-top:25px}
-.dna-box h3{color:#d5ff65}
-.dna-strand{font-size:20px;letter-spacing:3px;overflow-wrap:anywhere;color:#d5ff65}
-@media(max-width:600px){
-header{gap:12px}
-nav{display:flex;flex-wrap:wrap;gap:8px}
-.hero{padding-top:75px}
-section{padding:45px 5%}
+:root {
+  --fundo: #081510;
+  --cartao: #10251d;
+  --verde: #d5ff65;
+  --texto: #fff8e9;
+  --suave: #c4d1c7;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 5%;
+  background: var(--cartao);
+  border-bottom: 1px solid #ffffff18;
+}
+.logo { color: var(--verde); font-weight: 900; letter-spacing: 2px; }
+nav { display: flex; flex-wrap: wrap; gap: 14px; }
+nav a { color: white; text-decoration: none; font-size: 14px; }
+nav a:hover { color: var(--verde); }
+.hero {
+  padding: 100px 7%;
+  min-height: 460px;
+  background:
+    radial-gradient(ellipse at 85% 30%, #31583c 0%, transparent 45%),
+    linear-gradient(120deg, #081510, #142b1d);
+}
+.hero h1 {
+  font-size: clamp(42px, 8vw, 82px);
+  line-height: 1.02;
+  margin: 15px 0;
+}
+.lima { color: var(--verde); }
+.hero p { max-width: 620px; font-size: 18px; }
+.btn {
+  display: inline-block;
+  border: 0;
+  background: var(--verde);
+  color: #10251d;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+section { padding: 65px 7%; scroll-margin-top: 80px; }
+section:nth-of-type(even) { background: #0d1d16; }
+h2 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; }
+.intro { color: var(--suave); max-width: 720px; }
+.tag {
+  color: var(--verde);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--cartao);
+  border: 1px solid #ffffff20;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background: #1c4932;
+}
+.card-content { padding: 22px; }
+.card p, .fact p { color: var(--suave); }
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 15px;
+}
+.fact {
+  padding: 22px;
+  background: var(--cartao);
+  border-radius: 16px;
+  border: 1px solid #ffffff15;
+}
+.fact .emoji { font-size: 27px; }
+.table-wrap { overflow-x: auto; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  background: var(--cartao);
+}
+th, td {
+  text-align: left;
+  padding: 14px;
+  border-bottom: 1px solid #ffffff20;
+}
+th { color: var(--verde); }
+.dna-box {
+  background: var(--cartao);
+  border: 1px solid #d5ff6540;
+  padding: 24px;
+  border-radius: 18px;
+  margin-top: 22px;
+}
+.dna-box h3 { color: var(--verde); }
+.dna-strand {
+  color: var(--verde);
+  font-size: clamp(16px, 3vw, 23px);
+  letter-spacing: 3px;
+  overflow-wrap: anywhere;
+}
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+.person {
+  padding: 20px 10px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(135deg, #1c4932, var(--cartao));
+  border: 1px solid #ffffff20;
+}
+.person span {
+  display: block;
+  color: var(--verde);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.quiz {
+  max-width: 700px;
+  background: var(--cartao);
+  padding: 24px;
+  border-radius: 18px;
+}
+.answers { display: grid; gap: 10px; }
+.answers button {
+  padding: 13px;
+  background: #1c4932;
+  color: white;
+  border: 1px solid #ffffff30;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+.answers button:hover { border-color: var(--verde); }
+.answers button:disabled { opacity: .9; cursor: default; }
+#feedback { color: var(--verde); font-weight: bold; }
+footer {
+  text-align: center;
+  padding: 28px 5%;
+  color: var(--suave);
+  background: var(--cartao);
+}
+@media (max-width: 600px) {
+  header { padding: 14px 5%; }
+  nav { gap: 10px; }
+  .hero { padding: 70px 5%; }
+  section { padding: 45px 5%; }
+  .card img { height: 230px; }
 }
 </style>
 </head>
+
 <body>
 <header>
-<div class="logo">DNA SELVAGEM 🐾</div>
-<nav>
-<a href="#animais">Animais</a>
-<a href="#duelo">Comparação</a>
-<a href="#dna">DNA</a>
-<a href="#fatos">Curiosidades</a>
-<a href="#quiz">Quiz</a>
-<a href="#equipe">Equipe</a>
-</nav>
+  <div class="logo">DNA SELVAGEM 🐾</div>
+  <nav aria-label="Navegação principal">
+    <a href="#animais">Animais</a>
+    <a href="#duelo">Comparação</a>
+    <a href="#dna">DNA</a>
+    <a href="#fatos">Curiosidades</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#equipe">Equipe</a>
+  </nav>
 </header>
+
 <main>
 <div class="hero">
-<p class="lima">EXPLORE O LADO SELVAGEM DA NATUREZA</p>
-<h1>DOIS FELINOS.<br><span class="lima">INSTINTO PURO.</span></h1>
-<p>Um é o velocista terrestre. O outro é símbolo de mistério e furtividade. Descubra o universo dos guepardos e das panteras negras!</p>
-<a class="btn" href="#animais">Começar a explorar ↓</a>
+  <p class="tag">EXPLORE O LADO SELVAGEM DA NATUREZA</p>
+  <h1>DOIS FELINOS.<br><span class="lima">INSTINTO PURO.</span></h1>
+  <p>Um é o velocista terrestre. O outro é símbolo de mistério e furtividade. Descubra o universo dos guepardos e das panteras negras!</p>
+  <a class="btn" href="#animais">Começar a explorar ↓</a>
 </div>
 
 <section id="animais">
-<p class="tag">CONHEÇA OS PROTAGONISTAS</p>
-<h2>Velocidade ou furtividade?</h2>
-<article class="card">
-<img src="https://images.unsplash.com/photo-HmXrZbM9eVY?auto=format&fit=crop&w=1000&q=85" alt="Guepardo" loading="lazy">
-<div>
-<p class="tag">VELOCIDADE • ÁFRICA</p>
-<h3>🐆 O Guepardo</h3>
-<p>Conhecido por ser o animal terrestre mais rápido, o guepardo tem pernas longas, corpo leve e uma cauda que ajuda no equilíbrio durante curvas velozes.</p>
-<p><b class="lima">Curiosidade:</b> as marcas pretas no rosto parecem linhas de lágrimas e ajudam a identificar a espécie.</p>
-</div>
-</article>
-</div>
-</article>
-<article class="card">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Black%20leopard.JPG?width=1000" alt="Pantera negra" loading="lazy">
-<div>
-<p class="tag">FURTIVIDADE • GRANDES FELINOS</p>
-<h3>🐈‍⬛ A Pantera Negra</h3>
-<p>“Pantera negra” é o nome popular dado a leopardos ou jaguares com melanismo, uma característica genética que torna a pelagem muito escura.</p>
-<p><b class="lima">Curiosidade:</b> dependendo da iluminação, ainda é possível perceber as manchas na pelagem escura.</p>
-</div>
-</article>
-</div>
+  <p class="tag">CONHEÇA OS PROTAGONISTAS</p>
+  <h2>Velocidade ou furtividade?</h2>
+  <p class="intro">Cada felino possui características únicas que o ajudam a sobreviver na natureza.</p>
+
+  <div class="cards">
+    <article class="card">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Cheetah_looking_on_photographer.jpg?width=1000"
+        alt="Guepardo olhando para a câmera"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Cheetah.JPG?width=1000';">
+      <div class="card-content">
+        <p class="tag">VELOCIDADE • ÁFRICA</p>
+        <h3>🐆 O Guepardo</h3>
+        <p>Conhecido por ser o animal terrestre mais rápido, o guepardo tem pernas longas, corpo leve e uma cauda que ajuda no equilíbrio durante curvas velozes.</p>
+        <p><b class="lima">Curiosidade:</b> as marcas pretas no rosto parecem linhas de lágrimas.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Black_leopard.JPG?width=1000"
+        alt="Leopardo-negro, conhecido como pantera negra"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Black_Leopard_%2827655716800%29.jpg?width=1000';">
+      <div class="card-content">
+        <p class="tag">FURTIVIDADE • GRANDES FELINOS</p>
+        <h3>🐈‍⬛ A Pantera Negra</h3>
+        <p>“Pantera negra” é o nome popular dado a leopardos ou jaguares que apresentam melanismo, uma variação genética associada à pelagem muito escura.</p>
+        <p><b class="lima">Curiosidade:</b> sob determinada iluminação, ainda é possível perceber as manchas na pelagem.</p>
+      </div>
+    </article>
+  </div>
+</section><section id="duelo">
+  <p class="tag">DUELO DE ADAPTAÇÕES</p>
+  <h2>Guepardo × Pantera negra</h2>
+  <p class="intro">Qual leva vantagem? Depende do ambiente e da situação.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Característica</th><th>Guepardo</th><th>Pantera negra</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Especialidade</td><td>Velocidade</td><td>Furtividade e emboscada</td></tr>
+        <tr><td>Pelagem</td><td>Amarela com pintas pretas</td><td>Escura devido ao melanismo</td></tr>
+        <tr><td>Caça</td><td>Perseguição rápida</td><td>Aproximação silenciosa</td></tr>
+        <tr><td>Habitat</td><td>Principalmente áreas abertas</td><td>Depende de ser leopardo ou jaguar</td></tr>
+        <tr><td>Genética</td><td>Características físicas adaptadas à corrida</td><td>Variação genética ligada à pigmentação</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
-<section id="duelo">
-<p class="tag">DUELO DE ADAPTAÇÕES</p>
-<h2>Guepardo × Pantera negra</h2>
-<p class="intro">Qual leva vantagem? Depende da situação, do ambiente e da estratégia de cada animal.</p>
-<div class="table-wrap">
-<table>
-<tr><th>Característica</th><th>Guepardo</th><th>Pantera negra</th></tr>
-<tr><td>Especialidade</td><td>Velocidade</td><td>Furtividade e emboscada</td></tr>
-<tr><td>Pelagem</td><td>Amarela com pintas pretas</td><td>Escura devido ao melanismo</td></tr>
-<tr><td>Estratégia de caça</td><td>Perseguição rápida</td><td>Aproximação silenciosa</td></tr>
-<tr><td>Ambiente</td><td>Principalmente áreas abertas</td><td>Varia conforme seja leopardo ou jaguar</td></tr>
-<tr><td>Genética</td><td>Características herdadas que favorecem a corrida</td><td>Uma variação genética relacionada à produção de melanina</td></tr>
-</table>
-</div>
-</section> <section id="dna">
-<p class="tag">A CIÊNCIA POR TRÁS DOS FELINOS</p>
-<h2>O que o DNA revela? 🧬</h2>
-<p class="intro">O DNA guarda instruções biológicas herdadas dos pais. Essas instruções influenciam características como a pelagem, o desenvolvimento do corpo e diversas funções do organismo.</p>
+<section id="dna">
+  <p class="tag">A CIÊNCIA POR TRÁS DOS FELINOS</p>
+  <h2>O que o DNA revela? 🧬</h2>
+  <p class="intro">O DNA contém informações genéticas herdadas dos pais. Essas informações participam do desenvolvimento e das características dos seres vivos.</p>
 
-<div class="dna-box">
-<h3>🧬 O que é DNA?</h3>
-<p>O DNA é uma molécula que contém informações genéticas. Ele está presente nas células e participa da transmissão das características hereditárias de uma geração para outra.</p>
-<div class="dna-strand">A — T — C — G — A — T — G — C</div>
-<p>As letras A, T, C e G representam as bases nitrogenadas do DNA: adenina, timina, citosina e guanina.</p>
-</div>
+  <div class="dna-box">
+    <h3>🧬 O que é DNA?</h3>
+    <p>O DNA é uma molécula presente nas células que contém instruções biológicas. Ele participa da transmissão de características hereditárias de uma geração para outra.</p>
+    <div class="dna-strand">A — T — C — G — A — T — G — C</div>
+    <p>A, T, C e G representam adenina, timina, citosina e guanina, as quatro bases do DNA.</p>
+  </div>
 
-<div class="cards" style="margin-top:22px">
-<article class="card">
-<div>
-<p class="tag">GENÉTICA DO GUEPARDO</p>
-<h3>Como ele corre tão rápido?</h3>
-<p>A velocidade do guepardo depende de várias características físicas, como coluna flexível, pernas longas, músculos e cauda que auxilia no equilíbrio. Essas características são influenciadas pela hereditariedade e pela evolução da espécie.</p>
-</div>
-</article>
-<article class="card">
-<div>
-<p class="tag">GENÉTICA DA PANTERA NEGRA</p>
-<h3>Por que ela é preta?</h3>
-<p>O melanismo é uma variação genética associada à produção e à distribuição de melanina, o pigmento que dá cor à pele e aos pelos. Em leopardos e jaguares, essa variação pode produzir uma pelagem muito escura.</p>
-</div>
-</article>
-</div>
+  <div class="cards" style="margin-top:22px">
+    <article class="card">
+      <div class="card-content">
+        <p class="tag">GENÉTICA DO GUEPARDO</p>
+        <h3>Como ele corre tão rápido?</h3>
+        <p>O guepardo possui coluna flexível, pernas longas, musculatura adaptada à corrida e cauda que auxilia no equilíbrio. Sua velocidade resulta de diversas características físicas, da hereditariedade e da evolução.</p>
+      </div>
+    </article>
 
-<div class="dna-box">
-<h3>🔬 Afinal, o DNA dos dois é igual?</h3>
-<p>Não. Guepardos, leopardos e jaguares são espécies diferentes, com informações genéticas próprias. A pantera negra não é uma espécie separada: é geralmente um leopardo ou jaguar que apresenta melanismo.</p>
-<p><b class="lima">Conclusão:</b> o DNA contribui para as características dos felinos, mas o ambiente, a evolução e outros fatores também influenciam sua sobrevivência.</p>
-</div>
-</section>
+    <article class="card">
+      <div class="card-content">
+        <p class="tag">GENÉTICA DA PANTERA</p>
+        <h3>Por que ela é preta?</h3>
+        <p>O melanismo está relacionado à produção e distribuição de melanina, pigmento que dá cor à pele e aos pelos. Em leopardos e jaguares, essa variação pode resultar numa pelagem muito escura.</p>
+      </div>
+    </article>
+  </div>
 
-<section id="fatos">
-<p class="tag">FATOS SURPREENDENTES</p>
-<h2>Você sabia? 🧠</h2>
-<div class="facts">
-<div class="fact">
-<b>💨</b>
-<h3>Arranque explosivo</h3>
-<p>O guepardo pode atingir velocidades impressionantes, mas só consegue mantê-las por pouco tempo.</p>
-</div>
-<div class="fact">
-<b>🌑</b>
-<h3>Pelagem especial</h3>
-<p>O melanismo está relacionado à pigmentação escura da pelagem.</p>
-</div>
-<div class="fact">
-<b>🐾</b>
-<h3>Manchas únicas</h3>
-<p>As pintas do guepardo ajudam na camuflagem e na identificação do animal.</p>
-</div>
-<div class="fact">
-<b>🌿</b>
-<h3>Equilíbrio natural</h3>
-<p>Predadores ajudam a regular populações de outros animais nos ecossistemas.</p>
-</div>
-<div class="fact">
-<b>👁️</b>
-<h3>Visão aguçada</h3>
-<p>O guepardo costuma caçar durante o dia e depende bastante da visão para localizar suas presas.</p>
-</div>
-<div class="fact">
-<b>🛡️</b>
-<h3>Precisamos proteger</h3>
-<p>A perda de habitat, os conflitos com humanos e a caça ilegal ameaçam grandes felinos.</p>
-</div>
-</div>
+  <div class="dna-box">
+    <h3>🔬 O DNA dos dois é igual?</h3>
+    <p>Não. Guepardos, leopardos e jaguares são espécies diferentes e possuem informações genéticas próprias. A pantera negra não é uma espécie separada: esse nome geralmente descreve um leopardo ou jaguar com melanismo.</p>
+    <p><b class="lima">Conclusão:</b> a genética influencia as características dos felinos, enquanto o ambiente e a evolução também participam de sua sobrevivência.</p>
+  </div>
+</section><section id="fatos">
+  <p class="tag">FATOS SURPREENDENTES</p>
+  <h2>Você sabia? 🧠</h2>
+  <div class="facts">
+    <article class="fact">
+      <div class="emoji">💨</div>
+      <h3>Arranque explosivo</h3>
+      <p>O guepardo consegue correr muito rápido, mas só mantém sua velocidade máxima por pouco tempo.</p>
+    </article>
+    <article class="fact">
+      <div class="emoji">🌑</div>
+      <h3>Pelagem especial</h3>
+      <p>O melanismo está relacionado à pigmentação escura da pelagem.</p>
+    </article>
+    <article class="fact">
+      <div class="emoji">🐾</div>
+      <h3>Manchas únicas</h3>
+      <p>As pintas do guepardo ajudam na camuflagem e na identificação do animal.</p>
+    </article>
+    <article class="fact">
+      <div class="emoji">🌿</div>
+      <h3>Equilíbrio natural</h3>
+      <p>Os predadores participam do equilíbrio dos ecossistemas.</p>
+    </article>
+    <article class="fact">
+      <div class="emoji">👁️</div>
+      <h3>Visão aguçada</h3>
+      <p>O guepardo depende bastante da visão para localizar suas presas.</p>
+    </article>
+    <article class="fact">
+      <div class="emoji">🛡️</div>
+      <h3>Precisamos proteger</h3>
+      <p>A perda de habitat e a caça ilegal ameaçam a sobrevivência de grandes felinos.</p>
+    </article>
+  </div>
 </section>
 
 <section id="quiz">
-<p class="tag">DESAFIO INTERATIVO</p>
-<h2>Quiz Selvagem 🎮</h2>
-<p class="intro">Teste seus conhecimentos sobre os felinos e sua genética.</p>
-<div class="quiz">
-<p id="numero">Pergunta 1 de 4</p>
-<h3 id="pergunta">Qual felino é famoso por sua velocidade?</h3>
-<div class="answers" id="respostas"></div>
-<p id="feedback" aria-live="polite"></p>
-<button class="btn" id="proximo" hidden>Próxima pergunta →</button>
-</div>
+  <p class="tag">DESAFIO INTERATIVO</p>
+  <h2>Quiz Selvagem 🎮</h2>
+  <p class="intro">Teste seus conhecimentos sobre os felinos e sua genética.</p>
+  <div class="quiz">
+    <p id="numero">Pergunta 1 de 4</p>
+    <h3 id="pergunta">Qual felino é famoso por sua velocidade?</h3>
+    <div class="answers" id="respostas"></div>
+    <p id="feedback" aria-live="polite"></p>
+    <button class="btn" id="proximo" hidden>Próxima pergunta →</button>
+  </div>
 </section>
 
 <section id="equipe">
-<p class="tag">NOSSA EQUIPE</p>
-<h2>As pessoas por trás do projeto</h2>
-<p class="intro">Conhecimento, criatividade e trabalho em equipe para explorar a vida selvagem.</p>
-<div class="team">
-<div class="person"><span>EQUIPE</span>Levi</div>
-<div class="person"><span>EQUIPE</span>Icaro</div>
-<div class="person"><span>EQUIPE</span>Sabrina</div>
-<div class="person"><span>EQUIPE</span>Hellen</div>
-<div class="person"><span>EQUIPE</span>Lavinia</div>
-<div class="person"><span>EQUIPE</span>Thainá</div>
-<div class="person"><span>EQUIPE</span>Geovana</div>
-<div class="person"><span>EQUIPE</span>Maria Paula</div>
-</div>
+  <p class="tag">NOSSA EQUIPE</p>
+  <h2>As pessoas por trás do projeto</h2>
+  <p class="intro">Conhecimento, criatividade e trabalho em equipe para explorar a vida selvagem.</p>
+  <div class="team">
+    <div class="person"><span>EQUIPE</span>Levi</div>
+    <div class="person"><span>EQUIPE</span>Icaro</div>
+    <div class="person"><span>EQUIPE</span>Sabrina</div>
+    <div class="person"><span>EQUIPE</span>Hellen</div>
+    <div class="person"><span>EQUIPE</span>Lavinia</div>
+    <div class="person"><span>EQUIPE</span>Thainá</div>
+    <div class="person"><span>EQUIPE</span>Geovana</div>
+    <div class="person"><span>EQUIPE</span>Maria Paula</div>
+  </div>
 </section>
+
 </main>
 
 <footer>
-DNA Selvagem 🐾 — Conhecer para proteger.
-<p>Projeto educativo sobre guepardos, panteras negras e genética.</p>
+  <p>DNA Selvagem 🐾 — Conhecer para proteger.</p>
+  <p>Projeto educativo sobre guepardos, panteras negras e genética.</p>
 </footer><script>
 const perguntas = [
-{
-q: "Qual felino é famoso por sua velocidade?",
-a: ["Guepardo", "Pantera negra", "Leão"],
-c: 0,
-exp: "O guepardo é conhecido como o animal terrestre mais rápido."
-},
-{
-q: "Pantera negra é uma espécie separada?",
-a: ["Sim", "Não, geralmente é um leopardo ou jaguar melanístico", "É um guepardo"],
-c: 1,
-exp: "Pantera negra é o nome popular dado a leopardos ou jaguares com melanismo."
-},
-{
-q: "Para que serve a cauda do guepardo durante a corrida?",
-a: ["Para ajudar no equilíbrio e nas curvas", "Para voar", "Para guardar água"],
-c: 0,
-exp: "A cauda auxilia o equilíbrio e as mudanças rápidas de direção."
-},
-{
-q: "Como podemos ajudar os grandes felinos?",
-a: ["Destruindo florestas", "Comprando animais silvestres", "Protegendo habitats e combatendo o tráfico"],
-c: 2,
-exp: "Proteger os habitats é essencial para a sobrevivência desses animais."
-}
+  {
+    q: "Qual felino é famoso por sua velocidade?",
+    a: ["Guepardo", "Pantera negra", "Leão"],
+    c: 0,
+    exp: "O guepardo é conhecido como o animal terrestre mais rápido."
+  },
+  {
+    q: "Pantera negra é sempre uma espécie separada?",
+    a: [
+      "Sim",
+      "Não, geralmente é um leopardo ou jaguar melanístico",
+      "É um guepardo"
+    ],
+    c: 1,
+    exp: "Pantera negra é o nome popular para leopardos ou jaguares com melanismo."
+  },
+  {
+    q: "Para que serve a cauda do guepardo durante a corrida?",
+    a: [
+      "Para ajudar no equilíbrio e nas curvas",
+      "Para voar",
+      "Para guardar água"
+    ],
+    c: 0,
+    exp: "A cauda ajuda no equilíbrio e nas mudanças de direção."
+  },
+  {
+    q: "Como podemos ajudar os grandes felinos?",
+    a: [
+      "Destruindo florestas",
+      "Comprando animais silvestres",
+      "Protegendo habitats e combatendo o tráfico"
+    ],
+    c: 2,
+    exp: "Proteger os habitats é essencial para a sobrevivência desses animais."
+  }
 ];
 
 let atual = 0;
@@ -260,35 +420,37 @@ const feedback = document.getElementById("feedback");
 const numero = document.getElementById("numero");
 const proximo = document.getElementById("proximo");
 
-function mostrar() {
+function mostrarPergunta() {
   bloqueado = false;
   finalizado = false;
 
+  const p = perguntas[atual];
+
   numero.textContent = `Pergunta ${atual + 1} de ${perguntas.length}`;
-  pergunta.textContent = perguntas[atual].q;
+  pergunta.textContent = p.q;
   feedback.textContent = "";
+  respostas.innerHTML = "";
   proximo.hidden = true;
   proximo.textContent = "Próxima pergunta →";
-  respostas.innerHTML = "";
 
-  perguntas[atual].a.forEach((texto, indice) => {
+  p.a.forEach((texto, indice) => {
     const botao = document.createElement("button");
     botao.textContent = texto;
-    botao.addEventListener("click", () => responder(indice, botao));
+    botao.addEventListener("click", () => responder(indice));
     respostas.appendChild(botao);
   });
 }
 
-function responder(indice, botaoEscolhido) {
+function responder(indice) {
   if (bloqueado) return;
-  bloqueado = true;
 
+  bloqueado = true;
   const p = perguntas[atual];
 
-  Array.from(respostas.children).forEach((botao, indice) => {
+  Array.from(respostas.children).forEach((botao, i) => {
     botao.disabled = true;
 
-    if (indice === p.c) {
+    if (i === p.c) {
       botao.style.borderColor = "#d5ff65";
     }
   });
@@ -311,33 +473,38 @@ proximo.addEventListener("click", () => {
   if (finalizado) {
     atual = 0;
     pontos = 0;
-    mostrar();
+    mostrarPergunta();
     return;
   }
 
   if (atual < perguntas.length - 1) {
     atual++;
-    mostrar();
-  } else {
-    finalizado = true;
-    numero.textContent = "DESAFIO CONCLUÍDO";
-    pergunta.textContent = `Você acertou ${pontos} de ${perguntas.length}!`;
-    respostas.innerHTML = "";
-
-    if (pontos === 4) {
-      feedback.textContent = "Incrível! Você domina o mundo dos felinos! 🐾";
-    } else if (pontos >= 2) {
-      feedback.textContent = "Mandou bem! Continue explorando o site.";
-    } else {
-      feedback.textContent = "Estude as curiosidades e tente novamente!";
-    }
-
-    proximo.hidden = false;
-    proximo.textContent = "Jogar novamente";
+    mostrarPergunta();
+    return;
   }
+
+  finalizado = true;
+  numero.textContent = "DESAFIO CONCLUÍDO";
+  pergunta.textContent =
+    `Você acertou ${pontos} de ${perguntas.length}!`;
+  respostas.innerHTML = "";
+
+  if (pontos === 4) {
+    feedback.textContent =
+      "Incrível! Você domina o mundo dos felinos! 🐾";
+  } else if (pontos >= 2) {
+    feedback.textContent =
+      "Mandou bem! Continue explorando o site.";
+  } else {
+    feedback.textContent =
+      "Estude as curiosidades e tente novamente!";
+  }
+
+  proximo.hidden = false;
+  proximo.textContent = "Jogar novamente";
 });
 
-mostrar();
+mostrarPergunta();
 </script>
 </body>
 </html>
