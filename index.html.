@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DNA Selvagem | Guepardos e Panteras</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#081510;color:#fff8e9;font-family:Arial,sans-serif;line-height:1.6}
+header{padding:18px 5%;background:#10251d;position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-weight:900;letter-spacing:2px;color:#d5ff65}
+nav a{color:white;text-decoration:none;margin:0 8px;font-size:14px}
+nav a:hover{color:#d5ff65}
+.hero{padding:100px 7%;min-height:490px;background:linear-gradient(90deg,#081510 5%,#081510bd 65%,#08151044),url('https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?auto=format&fit=crop&w=1600&q=85') center/cover}
+.hero h1{font-size:clamp(42px,8vw,85px);line-height:1;margin:15px 0}
+.lima{color:#d5ff65}
+.hero p{max-width:600px;font-size:18px}
+.btn{display:inline-block;background:#d5ff65;color:#10251d;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:12px}
+section{padding:65px 7%}
+section:nth-of-type(even){background:#0d1d16}
+h2{font-size:clamp(28px,5vw,45px);line-height:1.1}
+.intro{color:#c4d1c7;max-width:700px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:#10251d;border:1px solid #ffffff20;border-radius:20px;overflow:hidden}
+.card img{width:100%;height:240px;object-fit:cover}
+.card div{padding:22px}
+.card p,.fact p{color:#c4d1c7}
+.tag{color:#d5ff65;font-size:12px;font-weight:bold;letter-spacing:1px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.fact{background:#10251d;padding:22px;border-radius:16px}
+.fact b{font-size:25px}
+table{border-collapse:collapse;width:100%;min-width:550px;background:#10251d}
+th,td{text-align:left;padding:14px;border-bottom:1px solid #ffffff20}
+th{color:#d5ff65}
+.table-wrap{overflow-x:auto}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.person{background:linear-gradient(135deg,#1c4932,#10251d);border:1px solid #ffffff20;padding:20px 10px;border-radius:14px;text-align:center;font-weight:bold}
+.person span{display:block;color:#d5ff65;font-size:11px;letter-spacing:2px}
+.quiz{max-width:700px;background:#10251d;padding:24px;border-radius:18px}
+.answers{display:grid;gap:10px}
+.answers button{padding:13px;background:#1c4932;color:white;border:1px solid #ffffff30;border-radius:10px;text-align:left;font-size:16px;cursor:pointer}
+.answers button:hover{border-color:#d5ff65}
+#feedback{color:#d5ff65;font-weight:bold}
+footer{text-align:center;padding:30px;color:#c4d1c7;background:#10251d}
+@media(max-width:600px){header{gap:12px}nav{display:flex;flex-wrap:wrap;gap:8px}.hero{padding-top:75px}section{padding:45px 5%}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">DNA SELVAGEM 🐾</div>
+<nav>
+<a href="#animais">Animais</a>
+<a href="#duelo">Comparação</a>
+<a href="#fatos">Curiosidades</a>
+<a href="#quiz">Quiz</a>
+<a href="#equipe">Equipe</a>
+</nav>
+</header>
+
+<main>
+<div class="hero">
+<p class="lima">EXPLORE O LADO SELVAGEM DA NATUREZA</p>
+<h1>DOIS FELINOS.<br><span class="lima">INSTINTO PURO.</span></h1>
+<p>Um é o velocista terrestre. O outro é símbolo de mistério e furtividade. Descubra o universo dos guepardos e das panteras negras!</p>
+<a class="btn" href="#animais">Começar a explorar ↓</a>
+</div>
+
+<section id="animais">
+<p class="tag">CONHEÇA OS PROTAGONISTAS</p>
+<h2>Velocidade ou furtividade?</h2>
+<p class="intro">Cada felino possui características únicas que o ajudam a sobreviver na natureza.</p>
+<div class="cards">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=85" alt="Vida selvagem na natureza" loading="lazy">
+<div><p class="tag">VELOCIDADE • ÁFRICA</p><h3>🐆 O Guepardo</h3>
+<p>Conhecido por ser o animal terrestre mais rápido, o guepardo tem pernas longas, corpo leve e uma cauda que ajuda no equilíbrio durante curvas velozes.</p>
+<p><b class="lima">Curiosidade:</b> as marcas pretas no rosto parecem linhas de lágrimas e são uma característica marcante da espécie.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=85" alt="Grande felino selvagem" loading="lazy">
+<div><p class="tag">FURTIVIDADE • GRANDES FELINOS</p><h3>🐈‍⬛ A Pantera Negra</h3>
+<p>Pantera negra é o nome popular dado a leopardos ou jaguares com melanismo, uma característica genética que torna a pelagem muito escura.</p>
+<p><b class="lima">Curiosidade:</b> dependendo da iluminação, ainda é possível perceber as manchas na pelagem escura.</p></div>
+</article>
+</div>
+</section>
+
+<section id="duelo">
+<p class="tag">DUELO DE ADAPTAÇÕES</p>
+<h2>Guepardo × Pantera negra</h2>
+<p class="intro">Qual leva vantagem? Depende da situação e do ambiente!</p>
+<div class="table-wrap"><table>
+<tr><th>Característica</th><th>Guepardo</th><th>Pantera negra</th></tr>
+<tr><td>Especialidade</td><td>Velocidade</td><td>Furtividade e emboscada</td></tr>
+<tr><td>Pelagem</td><td>Amarela com pintas pretas</td><td>Escura por melanismo</td></tr>
+<tr><td>Estratégia de caça</td><td>Perseguição rápida</td><td>Aproximação silenciosa</td></tr>
+<tr><td>Ambiente</td><td>Principalmente áreas abertas</td><td>Varia conforme seja leopardo ou jaguar</td></tr>
+</table></div>
+</section>
+
+<section id="fatos">
+<p class="tag">FATOS SURPREENDENTES</p>
+<h2>Você sabia? 🧠</h2>
+<div class="facts">
+<div class="fact"><b>💨</b><h3>Arranque explosivo</h3><p>O guepardo atinge velocidades impressionantes, mas só consegue mantê-las por pouco tempo.</p></div>
+<div class="fact"><b>🌑</b><h3>Uma pelagem especial</h3><p>O melanismo aumenta a pigmentação escura da pele e dos pelos.</p></div>
+<div class="fact"><b>🐾</b><h3>Manchas únicas</h3><p>As pintas ajudam o guepardo a se camuflar na vegetação.</p></div>
+<div class="fact"><b>🌿</b><h3>Equilíbrio natural</h3><p>Predadores têm um papel importante no equilíbrio dos ecossistemas.</p></div>
+<div class="fact"><b>👁️</b><h3>Visão aguçada</h3><p>O guepardo localiza presas principalmente durante o dia.</p></div>
+<div class="fact"><b>🛡️</b><h3>Precisamos proteger</h3><p>A perda de habitat e a caça ilegal ameaçam grandes felinos.</p></div>
+</div>
+</section>
+
+<section id="quiz">
+<p class="tag">DESAFIO INTERATIVO</p>
+<h2>Quiz Selvagem 🎮</h2>
+<p class="intro">Teste seus conhecimentos. Será que você domina o mundo dos felinos?</p>
+<div class="quiz">
+<p id="numero">Pergunta 1 de 4</p>
+<h3 id="pergunta">Qual felino é famoso por sua velocidade?</h3>
+<div class="answers" id="respostas"></div>
+<p id="feedback" aria-live="polite"></p>
+<button class="btn" id="proximo" hidden>Próxima pergunta →</button>
+</div>
+</section>
+
+<section id="equipe">
+<p class="tag">NOSSA EQUIPE</p>
+<h2>As pessoas por trás do projeto</h2>
+<p class="intro">Conhecimento, criatividade e trabalho em equipe para explorar a vida selvagem.</p>
+<div class="team">
+<div class="person"><span>EQUIPE</span>Levi</div>
+<div class="person"><span>EQUIPE</span>Icaro</div>
+<div class="person"><span>EQUIPE</span>Sabrina</div>
+<div class="person"><span>EQUIPE</span>Hellen</div>
+<div class="person"><span>EQUIPE</span>Lavinia</div>
+<div class="person"><span>EQUIPE</span>Thainá</div>
+<div class="person"><span>EQUIPE</span>Geovana</div>
+<div class="person"><span>EQUIPE</span>Maria Paula</div>
+</div>
+</section>
+</main>
+<footer>DNA Selvagem 🐾 — Conhecer para proteger. | Projeto educativo sobre guepardos e panteras negras.</footer>
+<script>
+const perguntas=[
+{q:"Qual felino é famoso por sua velocidade?",a:["Guepardo","Pantera negra","Leão"],c:0,exp:"Isso! O guepardo é conhecido como o animal terrestre mais rápido."},
+{q:"Pantera negra é sempre uma espécie separada?",a:["Sim","Não, geralmente é um leopardo ou jaguar melanístico","É um guepardo"],c:1,exp:"Correto! O nome descreve a pelagem escura causada pelo melanismo."},
+{q:"Para que serve a cauda do guepardo durante a corrida?",a:["Para ajudar no equilíbrio e nas curvas","Para voar","Para guardar água"],c:0,exp:"Boa! A cauda ajuda o guepardo a equilibrar-se e mudar de direção."},
+{q:"Como podemos ajudar os grandes felinos?",a:["Destruindo florestas","Comprando animais silvestres","Protegendo habitats e combatendo o tráfico"],c:2,exp:"Perfeito! A proteção dos habitats é essencial para a sobrevivência deles."}
+];
+let atual=0,pontos=0,bloqueado=false,finalizado=false;
+const pergunta=document.getElementById("pergunta"),respostas=document.getElementById("respostas"),feedback=document.getElementById("feedback"),numero=document.getElementById("numero"),proximo=document.getElementById("proximo");
+function mostrar(){bloqueado=false;finalizado=false;numero.textContent=`Pergunta ${atual+1} de ${perguntas.length}`;pergunta.textContent=perguntas[atual].q;feedback.textContent="";proximo.hidden=true;proximo.textContent="Próxima pergunta →";respostas.innerHTML="";perguntas[atual].a.forEach((txt,i)=>{const b=document.createElement("button");b.textContent=txt;b.onclick=()=>responder(i,b);respostas.appendChild(b)})}
+function responder(i,botao){if(bloqueado)return;bloqueado=true;const p=perguntas[atual];[...respostas.children].forEach((b,j)=>{b.disabled=true;if(j===p.c)b.style.borderColor="#d5ff65"});if(i===p.c){pontos++;botao.classList.add("correct");feedback.textContent="Acertou! "+p.exp}else{botao.classList.add("wrong");feedback.textContent="Quase! "+p.exp}proximo.hidden=false;proximo.textContent=atual===perguntas.length-1?"Ver resultado":"Próxima pergunta →"}
+proximo.onclick=()=>{if(finalizado){atual=0;pontos=0;mostrar();return}if(atual<perguntas.length-1){atual++;mostrar()}else{finalizado=true;numero.textContent="DESAFIO CONCLUÍDO";pergunta.textContent=`Você acertou ${pontos} de ${perguntas.length}!`;respostas.innerHTML="";feedback.textContent=pontos===4?"Incrível! Você é especialista selvagem! 🐾":pontos>=2?"Mandou bem! Continue explorando o site.":"Explore as curiosidades e tente novamente!";proximo.textContent="Jogar novamente"}};
+mostrar();
+</script>
+</body>
+</html>
