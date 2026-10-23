@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DNA Selvagem: descubra a genética, as características e a conservação dos guepardos e das panteras-negras.">
+<meta name="theme-color" content="#081510">
+<title>DNA Selvagem | Guepardos, Panteras e Genética</title>
+
+<style>
+:root{
+  --bg:#081510;
+  --dark:#10251d;
+  --green:#d5ff65;
+  --text:#fff8e9;
+  --muted:#c4d1c7;
+  --border:#ffffff20;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.7}
+header{padding:16px 5%;background:#10251df2;position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.logo{font-weight:900;letter-spacing:2px;color:var(--green);font-size:18px}
+nav{display:flex;flex-wrap:wrap;gap:12px}
+nav a{color:white;text-decoration:none;font-size:13px}
+nav a:hover{color:var(--green)}
+.hero{padding:100px 7%;min-height:490px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;background:linear-gradient(90deg,#081510 5%,#081510bd 65%,#08151044),url('https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?auto=format&fit=crop&w=1600&q=85') center/cover}
+.hero h1{font-size:clamp(42px,8vw,85px);line-height:1.02;margin:15px 0;letter-spacing:-2px}
+.lima{color:var(--green)}
+.hero p{max-width:650px;font-size:18px}
+.btn{display:inline-block;background:var(--green);color:#10251d;padding:12px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:12px;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+section{padding:65px 7%}
+section:nth-of-type(even){background:#0d1d16}
+h2{font-size:clamp(28px,5vw,45px);line-height:1.15;margin:12px 0 18px}
+h3{line-height:1.3}
+.intro{color:var(--muted);max-width:760px}
+.tag{color:var(--green);font-size:12px;font-weight:bold;letter-spacing:1.5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:22px}
+.card{background:var(--dark);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#d5ff6570}
+.card img{width:100%;height:240px;object-fit:cover;display:block}
+.card div{padding:22px}
+.card p,.fact p{color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:15px}
+.fact{background:var(--dark);padding:22px;border-radius:16px;border:1px solid var(--border)}
+.fact b{font-size:25px}
+.table-wrap{overflow-x:auto;border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:550px;background:var(--dark)}
+th,td{text-align:left;padding:14px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--green)}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.person{background:linear-gradient(135deg,#1c4932,#10251d);border:1px solid var(--border);padding:20px 10px;border-radius:14px;text-align:center;font-weight:bold}
+.person span{display:block;color:var(--green);font-size:11px;letter-spacing:2px}
+.quiz{max-width:700px;background:var(--dark);padding:24px;border-radius:18px;border:1px solid var(--border)}
+.answers{display:grid;gap:10px}
+.answers button{padding:13px;background:#1c4932;color:white;border:1px solid #ffffff30;border-radius:10px;text-align:left;font-size:16px;cursor:pointer}
+.answers button:hover:not(:disabled){border-color:var(--green)}
+.answers button:disabled{cursor:default;opacity:.9}
+#feedback{color:var(--green);font-weight:bold}
+.dna-panel{background:linear-gradient(140deg,#10251d,#173725);border:1px solid #d5ff6540;border-radius:20px;padding:clamp(20px,4vw,35px);margin-top:25px}
+.dna-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;margin:25px 0}
+.dna-card{padding:20px;border-radius:14px;background:#081510a8;border:1px solid var(--border)}
+.dna-card h3{color:var(--green);margin-top:0}
+.dna-card p{color:var(--muted);margin-bottom:0}
+.dna-image{width:100%;max-height:360px;object-fit:cover;border-radius:15px;margin:15px 0}
+.answer-box{border-left:4px solid var(--green);padding:18px 22px;background:#d5ff6510;border-radius:0 12px 12px 0;margin:24px 0}
+.answer-box p{margin:0}
+.note{font-size:13px;color:var(--muted)}
+.sources a{color:var(--green);overflow-wrap:anywhere}
+.sources li{margin:10px 0}
+footer{text-align:center;padding:30px;color:var(--muted);background:var(--dark)}
+@media(max-width:600px){
+  header{gap:12px}
+  nav{gap:10px}
+  .hero{padding:75px 5%;min-height:420px}
+  section{padding:45px 5%}
+  .card img{height:210px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">DNA SELVAGEM 🐾</div>
+  <nav aria-label="Menu principal">
+    <a href="#animais">Animais</a>
+    <a href="#dna">DNA</a>
+    <a href="#duelo">Comparação</a>
+    <a href="#fatos">Curiosidades</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#equipe">Equipe</a>
+  </nav>
+</header>
+
+<main>
+<div class="hero">
+  <p class="tag">EXPLORE O LADO SELVAGEM DA NATUREZA</p>
+  <h1>DOIS FELINOS.<br><span class="lima">INSTINTO PURO.</span></h1>
+  <p>Velocidade, furtividade e genética. Descubra como o DNA ajuda a explicar as características dos guepardos e das panteras-negras.</p>
+  <a class="btn" href="#animais">Começar a explorar ↓</a>
+</div>
+
+<section id="animais">
+  <p class="tag">CONHEÇA OS PROTAGONISTAS</p>
+  <h2>Velocidade ou furtividade?</h2>
+  <p class="intro">Cada felino possui características que o ajudam a sobreviver. A genética participa da formação dessas características e da diversidade entre os indivíduos.</p>
+
+  <div class="cards">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=85" alt="Paisagem de vida selvagem africana" loading="lazy">
+      <div>
+        <p class="tag">VELOCIDADE • ÁFRICA</p>
+        <h3>🐆 O Guepardo</h3>
+        <p>O guepardo (<i>Acinonyx jubatus</i>) é conhecido por sua grande velocidade. Seu corpo leve, suas pernas longas e sua cauda ajudam na corrida e nas mudanças rápidas de direção.</p>
+        <p><b class="lima">Curiosidade:</b> as marcas pretas no rosto parecem linhas de lágrimas e são características da espécie.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=85" alt="Grande felino em ambiente natural" loading="lazy">
+      <div>
+        <p class="tag">FURTIVIDADE • GRANDES FELINOS</p>
+        <h3>🐈‍⬛ A Pantera Negra</h3>
+        <p>O nome pantera-negra é usado principalmente para leopardos e onças-pintadas que apresentam melanismo, uma característica genética associada à coloração muito escura da pelagem.</p>
+        <p><b class="lima">Curiosidade:</b> sob determinada iluminação, as manchas podem continuar visíveis na pelagem escura.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="dna">
+  <p class="tag">A CIÊNCIA POR TRÁS DA APARÊNCIA</p>
+  <h2>🧬 O que o DNA revela?</h2>
+  <p class="intro">O DNA contém instruções genéticas utilizadas pelo organismo. Ele ajuda os cientistas a estudar a hereditariedade, as diferenças entre os animais e a evolução das espécies.</p>
+
+  <div class="dna-panel">
+    <div class="dna-grid">
+      <article class="dna-card">
+        <h3>01. DNA</h3>
+        <p>É a molécula que armazena a informação genética. Essas informações contribuem para o desenvolvimento e o funcionamento dos seres vivos.</p>
+      </article>
+      <article class="dna-card">
+        <h3>02. Genes</h3>
+        <p>São segmentos de DNA que contêm instruções biológicas. Diferentes versões de determinados genes podem contribuir para diferenças entre indivíduos.</p>
+      </article>
+      <article class="dna-card">
+        <h3>03. Hereditariedade</h3>
+        <p>É a transmissão de informações genéticas dos pais para os descendentes. Por isso, filhotes podem herdar características de seus pais.</p>
+      </article>
+      <article class="dna-card">
+        <h3>04. Variação genética</h3>
+        <p>As diferenças no DNA contribuem para a diversidade dos seres vivos. Algumas variações influenciam características visíveis, enquanto outras não são perceptíveis.</p>
+      </article>
+    </div>
+
+    <h3>Por que os felinos têm pelagens diferentes?</h3>
+    <p>A cor da pelagem está relacionada à melanina, aos processos que controlam sua produção e distribuição e à interação de diferentes genes. O ambiente e a evolução também ajudam a explicar por que certas características são encontradas nas populações.</p>
+  </div>
+
+  <div class="cards" style="margin-top:25px">
+    <article class="card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Acinonyx%20jubatus.jpg" alt="Guepardo, felino de pelagem amarelada e pintas escuras" loading="lazy">
+      <div>
+        <p class="tag">GENÉTICA E DIVERSIDADE</p>
+        <h3>O DNA do guepardo</h3>
+        <p>A genética dos guepardos é importante para investigar o parentesco, a diversidade genética e a conservação da espécie. Estudos apontam baixa diversidade genética em comparação com muitas outras espécies de felinos, o que torna importante acompanhar suas populações.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Black%20Panther%20%28cropped%29.jpg" alt="Felino de pelagem negra" loading="lazy">
+      <div>
+        <p class="tag">GENÉTICA E PIGMENTAÇÃO</p>
+        <h3>O segredo da pantera-negra</h3>
+        <p>O melanismo está associado a variações genéticas que favorecem uma pelagem muito escura. Em leopardos, estudos relacionam esse fenômeno ao gene <i>ASIP</i>; em onças-pintadas, há associação com o gene <i>MC1R</i>. Os mecanismos não são iguais nas duas espécies.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="answer-box">
+    <p class="tag">RESPOSTA À PERGUNTA CENTRAL</p>
+    <h3>Como o DNA influencia as características dos guepardos e das panteras-negras?</h3>
+    <p>O DNA armazena informações genéticas que participam do desenvolvimento das características dos felinos. Variações genéticas podem influenciar a pigmentação da pelagem e outras características físicas. No guepardo, o estudo do DNA também ajuda a investigar sua diversidade genética e a orientar ações de conservação. Nas chamadas panteras-negras, determinadas variações genéticas estão associadas ao melanismo, responsável pela coloração escura. Assim, a genética ajuda a explicar tanto as semelhanças quanto as diferenças entre os animais.</p>
+  </div>
+
+  <div class="dna-panel">
+    <h3>🌿 Genética e conservação</h3>
+    <p>A diversidade genética é importante para a capacidade de uma população de enfrentar mudanças ambientais e outros desafios. Pesquisadores estudam o DNA para compreender o parentesco entre os indivíduos e apoiar estratégias de conservação. Proteger os habitats e combater a caça ilegal também são medidas fundamentais para a sobrevivência dos grandes felinos.</p>
+  </div>
+</section>
+
+<section id="duelo">
+  <p class="tag">DUELO DE ADAPTAÇÕES</p>
+  <h2>Guepardo × Pantera-negra</h2>
+  <p class="intro">Os dois são felinos, mas apresentam diferenças na aparência, no comportamento e nas adaptações. A comparação depende também de qual animal é chamado de pantera-negra.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Característica</th><th>Guepardo</th><th>Pantera-negra</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Identidade</td><td>Espécie própria: <i>Acinonyx jubatus</i></td><td>Leopardo ou onça-pintada com melanismo</td></tr>
+        <tr><td>Especialidade</td><td>Velocidade em perseguições curtas</td><td>Furtividade e emboscada</td></tr>
+        <tr><td>Pelagem</td><td>Amarelada com pintas pretas</td><td>Predominantemente escura</td></tr>
+        <tr><td>Genética</td><td>Importante para estudar diversidade e conservação</td><td>Variações genéticas associadas ao melanismo</td></tr>
+        <tr><td>Habitat</td><td>Principalmente áreas abertas da África, com pequena população asiática no Irã</td><td>Depende da espécie: leopardos e onças-pintadas vivem em regiões diferentes</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Observação: “pantera-negra” é um nome popular, não uma espécie científica independente. Leopardos e onças-pintadas pertencem a espécies diferentes.</p>
+</section>
+
+<section id="fatos">
+  <p class="tag">FATOS SURPREENDENTES</p>
+  <h2>Você sabia? 🧠</h2>
+  <div class="facts">
+    <div class="fact"><b>💨</b><h3>Arranque explosivo</h3><p>O guepardo pode atingir velocidades muito altas, mas só as mantém por períodos curtos.</p></div>
+    <div class="fact"><b>🌑</b><h3>Pelagem escura</h3><p>O melanismo está relacionado à pigmentação escura e a variações genéticas.</p></div>
+    <div class="fact"><b>🐾</b><h3>Manchas características</h3><p>As pintas do guepardo contribuem para a camuflagem no ambiente.</p></div>
+    <div class="fact"><b>🌿</b><h3>Equilíbrio natural</h3><p>Predadores participam do funcionamento dos ecossistemas e das relações entre espécies.</p></div>
+    <div class="fact"><b>👁️</b><h3>Visão aguçada</h3><p>O guepardo depende bastante da visão para localizar presas, principalmente durante o dia.</p></div>
+    <div class="fact"><b>🛡️</b><h3>Precisamos proteger</h3><p>A perda de habitat, os conflitos com humanos e a caça ilegal ameaçam diversos grandes felinos.</p></div>
+  </div>
+</section>
+
+<section id="quiz">
+  <p class="tag">DESAFIO INTERATIVO</p>
+  <h2>Quiz Selvagem 🎮</h2>
+  <p class="intro">Teste seus conhecimentos sobre os felinos e a genética.</p>
+  <div class="quiz">
+    <p id="numero">Pergunta 1 de 6</p>
+    <h3 id="pergunta">Qual felino é famoso por sua velocidade?</h3>
+    <div class="answers" id="respostas"></div>
+    <p id="feedback" aria-live="polite"></p>
+    <button class="btn" id="proximo" hidden>Próxima pergunta →</button>
+  </div>
+</section>
+
+<section id="fontes" class="sources">
+  <p class="tag">PESQUISA E REFERÊNCIAS</p>
+  <h2>📚 De onde vêm as informações?</h2>
+  <p class="intro">Estas fontes ajudam a aprofundar o estudo sobre genética, melanismo e conservação dos felinos.</p>
+  <ul>
+    <li><a href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">NCBI — artigos científicos e pesquisas em genética.</a></li>
+    <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0050386" target="_blank" rel="noopener noreferrer">PLOS ONE — estudo sobre a genética do melanismo em felinos.</a></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/12620197/" target="_blank" rel="noopener noreferrer">PubMed — pesquisa científica sobre melanismo e genética.</a></li>
+    <li><a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer">IUCN Red List — informações sobre o estado de conservação das espécies.</a></li>
+    <li><a href="https://www.catsg.org/" target="_blank" rel="noopener noreferrer">IUCN SSC Cat Specialist Group — informações sobre felinos selvagens.</a></li>
+  </ul>
+  <p class="note">As imagens são carregadas de serviços externos. Se alguma não aparecer, verifique o endereço da imagem ou substitua-o por uma fotografia de fonte confiável.</p>
+</section>
+
+<section id="equipe">
+  <p class="tag">NOSSA EQUIPE</p>
+  <h2>As pessoas por trás do projeto</h2>
+  <p class="intro">Conhecimento, criatividade e trabalho em equipe para explorar a vida selvagem e compreender a ciência por trás dela.</p>
+  <div class="team">
+    <div class="person"><span>EQUIPE</span>Levi</div>
+    <div class="person"><span>EQUIPE</span>Icaro</div>
+    <div class="person"><span>EQUIPE</span>Sabrina</div>
+    <div class="person"><span>EQUIPE</span>Hellen</div>
+    <div class="person"><span>EQUIPE</span>Lavinia</div>
+    <div class="person"><span>EQUIPE</span>Thainá</div>
+    <div class="person"><span>EQUIPE</span>Geovana</div>
+    <div class="person"><span>EQUIPE</span>Maria Paula</div>
+  </div>
+</section>
+
+<section id="conclusao">
+  <p class="tag">CONCLUSÃO</p>
+  <h2>Conhecer para proteger.</h2>
+  <p class="intro">O estudo do DNA mostra como a genética está relacionada às características dos seres vivos. Os guepardos e as panteras-negras demonstram como diferenças genéticas ajudam a explicar a diversidade dos felinos. Compreender essas relações também contribui para valorizar a pesquisa científica e a preservação da biodiversidade.</p>
+</section>
+</main>
+
+<footer>
+  <p>DNA Selvagem 🐾</p>
+  <p>Projeto educativo sobre DNA, guepardos, panteras-negras e conservação.</p>
+</footer>
+
+<script>
+const perguntas = [
+  {
+    q:"Qual felino é famoso por sua velocidade?",
+    a:["Guepardo","Pantera-negra","Leão"],
+    c:0,
+    e:"O guepardo é conhecido por ser o animal terrestre mais rápido."
+  },
+  {
+    q:"Pantera-negra é sempre uma espécie separada?",
+    a:["Sim","Não, geralmente é um leopardo ou uma onça-pintada melanística","É um guepardo"],
+    c:1,
+    e:"O nome popular pode se referir a leopardos ou onças-pintadas com melanismo."
+  },
+  {
+    q:"Qual é a principal função do DNA?",
+    a:["Armazenar informações genéticas","Produzir o ambiente","Fazer todos os animais iguais"],
+    c:0,
+    e:"O DNA armazena informações genéticas utilizadas pelo organismo."
+  },
+  {
+    q:"O que são genes?",
+    a:["Tipos de habitat","Segmentos de DNA com informações genéticas","Órgãos dos felinos"],
+    c:1,
+    e:"Os genes são segmentos de DNA que contêm informações biológicas."
+  },
+  {
+    q:"O que é melanismo?",
+    a:["Uma forma de correr","Uma doença de todos os felinos","Uma condição genética associada à pigmentação escura"],
+    c:2,
+    e:"O melanismo está associado à pigmentação escura da pele e dos pelos."
+  },
+  {
+    q:"Como podemos ajudar os grandes felinos?",
+    a:["Destruindo florestas","Protegendo habitats e combatendo a caça ilegal","Retirando-os da natureza"],
+    c:1,
+    e:"A proteção dos habitats e o combate às ameaças humanas são fundamentais."
+  }
+];
+
+let atual=0;
+let pontos=0;
+let bloqueado=false;
+let finalizado=false;
+
+const perguntaEl=document.getElementById("pergunta");
+const respostasEl=document.getElementById("respostas");
+const feedbackEl=document.getElementById("feedback");
+const numeroEl=document.getElementById("numero");
+const proximoEl=document.getElementById("proximo");
+
+function mostrarPergunta(){
+  bloqueado=false;
+  finalizado=false;
+  const p=perguntas[atual];
+
+  numeroEl.textContent=`Pergunta ${atual+1} de ${perguntas.length}`;
+  perguntaEl.textContent=p.q;
+  feedbackEl.textContent="";
+  proximoEl.hidden=true;
+  proximoEl.textContent="Próxima pergunta →";
+  respostasEl.innerHTML="";
+
+  p.a.forEach((texto,i)=>{
+    const botao=document.createElement("button");
+    botao.type="button";
+    botao.textContent=texto;
+    botao.addEventListener("click",()=>responder(i));
+    respostasEl.appendChild(botao);
+  });
+}
+
+function responder(escolha){
+  if(bloqueado)return;
+  bloqueado=true;
+
+  const p=perguntas[atual];
+  const botoes=[...respostasEl.children];
+
+  botoes.forEach((botao,i)=>{
+    botao.disabled=true;
+    if(i===p.c)botao.style.borderColor="#d5ff65";
+  });
+
+  if(escolha===p.c){
+    pontos++;
+    feedbackEl.textContent="Acertou! "+p.e;
+  }else{
+    feedbackEl.textContent="Quase! "+p.e;
+  }
+
+  proximoEl.hidden=false;
+  proximoEl.textContent=atual===perguntas.length-1
+    ?"Ver resultado"
+    :"Próxima pergunta →";
+}
+
+proximoEl.addEventListener("click",()=>{
+  if(finalizado){
+    atual=0;
+    pontos=0;
+    mostrarPergunta();
+    return;
+  }
+
+  if(atual<perguntas.length-1){
+    atual++;
+    mostrarPergunta();
+    return;
+  }
+
+  finalizado=true;
+  numeroEl.textContent="DESAFIO CONCLUÍDO";
+  perguntaEl.textContent=`Você 
