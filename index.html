@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DNA Selvagem | Guepardos e Panteras</title>
+<style>
+:root{--bg:#101411;--panel:#1b241d;--gold:#f3b84b;--cream:#f5f1e8;--muted:#c6c8bc;--green:#8ebf8b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+header{padding:68px 20px 58px;text-align:center;background:linear-gradient(135deg,#19251b,#44301b);border-bottom:3px solid var(--gold)}
+.kicker{letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-size:.8rem;font-weight:bold}
+h1{font-size:clamp(2.4rem,7vw,4.7rem);line-height:1.05;margin:12px 0}header p{max-width:720px;margin:18px auto;color:#e8e1d1;font-size:1.08rem}
+main{max-width:1050px;margin:auto;padding:24px 18px 60px}.section{margin:28px 0;padding:26px;background:var(--panel);border:1px solid #354237;border-radius:18px}
+h2{color:var(--gold);margin-top:0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:#222d24;padding:20px;border-radius:14px;border:1px solid #40503f}.emoji{font-size:2.6rem}
+.tag{display:inline-block;background:#354b36;color:#cce5c6;padding:4px 10px;border-radius:20px;font-size:.82rem}
+.note{border-left:4px solid var(--gold);padding:12px 16px;background:#292b21;border-radius:0 10px 10px 0}
+button{background:var(--gold);color:#17140e;font-weight:bold;border:0;padding:12px 16px;border-radius:10px;cursor:pointer;font-size:1rem}
+button:hover{filter:brightness(1.08)}.choices{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.result{margin-top:16px;padding:16px;border-radius:12px;background:#111a13;border:1px solid #51674f;min-height:58px}
+footer{text-align:center;color:var(--muted);padding:24px;font-size:.9rem}
+small{color:var(--muted)}a{color:var(--gold)}
+</style>
+</head>
+<body>
+<header>
+<div class="kicker">Ciências • DNA • Genes • Hereditariedade</div>
+<h1>DNA <span style="color:#f3b84b">Selvagem</span></h1>
+<p>O que o DNA revela sobre os guepardos e as chamadas panteras negras? Explore como os genes ajudam a explicar as características dos felinos.</p>
+</header>
+<main>
+<section class="section">
+<h2>🧬 O que é DNA?</h2>
+<p>O DNA é a molécula que guarda instruções para o desenvolvimento e o funcionamento dos seres vivos. Os <b>genes</b> são trechos do DNA que ajudam a determinar características, como partes da aparência. Cada filhote recebe material genético dos dois pais.</p>
+<div class="note"><b>Importante:</b> os genes influenciam as características, mas o ambiente e vários genes juntos também podem ter participação. Nem toda característica depende de um único gene.</div>
+</section>
+<section class="section">
+<h2>Conheça os felinos</h2>
+<div class="cards">
+<div class="card"><div class="emoji">🐆</div><h3>Guepardo</h3><span class="tag">Acinonyx jubatus</span><p>É famoso pela velocidade. Tem corpo esguio, manchas pretas sólidas e linhas escuras no rosto que parecem lágrimas. Suas manchas ajudam na camuflagem em ambientes abertos.</p></div>
+<div class="card"><div class="emoji">🐈‍⬛</div><h3>Pantera negra</h3><span class="tag">Leopardo ou onça-pintada</span><p>“Pantera negra” não costuma ser uma espécie separada: é o nome dado a leopardos ou onças-pintadas com melanismo, uma variação genética que deixa a pelagem muito escura. Em boa luz, as manchas podem continuar visíveis.</p></div>
+</div>
+</section>
+<section class="section">
+<h2>Como a hereditariedade funciona?</h2>
+<p>Uma versão de um gene é chamada <b>alelo</b>. Em modelos escolares simples, um alelo pode ser dominante (representado por letra maiúscula) e outro recessivo (letra minúscula). O resultado depende da combinação herdada dos pais.</p>
+<div class="cards">
+<div class="card"><h3>Genes e manchas</h3><p>O padrão e a distribuição das manchas dos felinos são influenciados por genes. Filhotes da mesma espécie podem apresentar diferenças herdadas.</p></div>
+<div class="card"><h3>Melanismo</h3><p>Em leopardos e onças-pintadas, o melanismo está associado a variantes genéticas que aumentam a pigmentação escura. A genética específica não é igual em todas as espécies.</p></div>
+<div class="card"><h3>Não são cruzamentos possíveis</h3><p>Guepardos e leopardos/onças pertencem a espécies diferentes. A atividade abaixo é um modelo didático de herança, não uma previsão de cruzamento entre esses felinos.</p></div>
+</div>
+</section>
+<section class="section">
+<h2>🔎 Desafio: investigue o filhote</h2>
+<p>Imagine uma espécie fictícia de felino em que a cor escura depende de um alelo recessivo <b>m</b>. O alelo <b>M</b> representa pelagem não escura e é dominante neste exemplo simplificado. Se os dois pais forem <b>Mm</b>, quais combinações podem aparecer?</p>
+<div class="choices">
+<button onclick="show('MM')">MM</button>
+<button onclick="show('Mm')">Mm</button>
+<button onclick="show('mm')">mm</button>
+</div>
+<div id="result" class="result" aria-live="polite">Escolha uma combinação genética para descobrir o resultado do modelo.</div>
+<small>Modelo didático simplificado; não representa exatamente a genética real do guepardo, do leopardo ou da onça-pintada.</small>
+</section>
+<section class="section">
+<h2>Conclusão</h2>
+<p>O DNA transmite informações hereditárias e ajuda a explicar semelhanças e diferenças entre os animais. Guepardos são reconhecidos pelas manchas e pela adaptação à corrida; já a “pantera negra” é geralmente um leopardo ou uma onça-pintada com pelagem escura causada por melanismo. Estudar genes permite entender como características podem passar de uma geração para outra.</p>
+</section>
+</main>
+<footer>Trabalho de Ciências • Estrutura do DNA, genes e hereditariedade</footer>
+<script>
+function show(g){
+ const r=document.getElementById('result');
+ const msgs={
+ 'MM':'<b>MM:</b> dois alelos dominantes. Neste modelo, a pelagem seria não escura.',
+ 'Mm':'<b>Mm:</b> um alelo dominante e um recessivo. Neste modelo, a pelagem seria não escura, mas o animal poderia transmitir o alelo m.',
+ 'mm':'<b>mm:</b> dois alelos recessivos. Neste modelo, a pelagem seria escura.'
+ };
+ r.innerHTML=msgs[g];
+}
+</script>
+</body>
+</html>
